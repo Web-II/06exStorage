@@ -1,0 +1,36 @@
+body {
+    font-family: Arial;
+    font-size: 1rem;
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    background-color: white;
+}
+
+label {
+    display: inline-block;
+    width: 5em;
+    text-align: right;
+    margin-right: 5px;
+}
+
+input:focus {
+    background-color: #FFFFCC;
+}
+
+#canvas {
+    border: 1px solid #67bad5;
+    float: right;
+}
+
+#wrapper div {
+    float: left;
+}
