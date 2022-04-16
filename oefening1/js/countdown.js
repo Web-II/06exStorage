@@ -1,3 +1,4 @@
+'use strict';
 class Milestone {
   #name;
   #date;
@@ -19,7 +20,7 @@ class Milestone {
   set date(value) {
     this.#date = value;
   }
-  toJSOn() {}
+  toJSON() {}
 }
 
 class MilestonesComponent {
