@@ -1,3 +1,4 @@
+'use strict';
 class GefietsteKilometers {
   #jaar;
   #aantalKilometers;
