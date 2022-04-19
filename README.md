@@ -43,8 +43,9 @@ De bedoeling van deze oefening is om in de local storage in je browser belangrij
      - De functie toHTML wordt opgeroepen
    - Voeg code toe aan de functie init() zodat de functie clearMilestones() wordt uitgevoerd als op de knop met id “clear” wordt geklikt, nadat de gebruiker via een confirm box toestemming gaf
 1. Een milestone verwijderen op positie position
+   - Nadat de gebruiker op de verwijder knop klikt, moet hij eerst via een confirm box toestemming geven.
    - Voeg code toe aan de functie deleteMilestone(ind) - De milestone op positie position wordt verwijderd uit de array - De functie toHTML wordt opgeroepen
-   - Voeg code toe aan de functie toHTML() zodat bij het overlopen van de milestones in de array er gecontroleerd wordt of de datum kleiner is dan of gelijk is aan de datum van vandaag. De gebruiker moet eerst via een confirm box toestemming geven.
+   - Voeg code toe aan de functie toHTML() zodat bij het overlopen van de milestones in de array er gecontroleerd wordt of de datum kleiner is dan of gelijk is aan de datum van vandaag. 
    - Probeer dit uit door in de functie addMilestone de controle op de datum tijdelijk in commentaar te zetten, waardoor je tijdelijk wel milestones kunt toevoegen met een datum kleiner dan vandaag. Bij het uitschrijven, zal je zien dat de foutmelding verschijnt in de console.
 1. Storage
 
