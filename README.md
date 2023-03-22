@@ -7,8 +7,7 @@ De bedoeling van deze oefening is om in de local storage in je browser belangrij
 - Als op de `Add` knop geklikt wordt, wordt de milestone toegevoegd aan de local storage op voorwaarde dat de datum groter is dan vandaag.
 - Als op `Clear` knop geklikt wordt, worden alle milestones verwijderd uit de local storage.
 
-1. Deze oefening is volledig analoog aan het stickies voorbeeld.
-   ![voorbeeld countdown](docs/countdown-final.mov)
+https://user-images.githubusercontent.com/10981553/226975807-3cdaf776-17df-4031-956a-f6317001c5c2.mov
 
 ## Gegeven
 
