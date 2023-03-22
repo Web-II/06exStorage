@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 class Milestone {
   #name;
   #date;
@@ -52,24 +52,24 @@ class MilestonesComponent {
   clearMilestones() {}
 
   toHTML() {
-    document.getElementById('overview').innerHTML = '';
+    document.getElementById("overview").innerHTML = "";
     this.#milestones.map((m, ind) => {
-      const li = document.createElement('li');
-      li.setAttribute('class', 'list-group-item col-sm-8');
+      const li = document.createElement("li");
+      li.setAttribute("class", "list-group-item col-sm-8");
       li.appendChild(
         document.createTextNode(
-          this.calculateDiffDays(m.date) + ' days left until ' + m.name
+          this.calculateDiffDays(m.date) + " days left until " + m.name
         )
       );
-      const btn = document.createElement('button');
-      btn.setAttribute('class', 'btn btn-default');
-      btn.setAttribute('style', 'margin-left:20px');
-      btn.innerText = '-';
-      btn.addEventListener('click', () => {
+      const btn = document.createElement("button");
+      btn.setAttribute("class", "btn btn-default");
+      btn.setAttribute("style", "margin-left:20px");
+      btn.innerText = "-";
+      btn.addEventListener("click", () => {
         this.deleteMilestone(ind);
       });
       li.appendChild(btn);
-      document.getElementById('overview').appendChild(li);
+      document.getElementById("overview").appendChild(li);
     });
   }
 
@@ -80,10 +80,10 @@ class MilestonesComponent {
 
 function init() {
   const milestonesComponent = new MilestonesComponent(this.localStorage);
-  const addButton = document.getElementById('add');
-  const clearButton = document.getElementById('clear');
-  const nameText = document.getElementById('name');
-  const dateText = document.getElementById('date');
+  const addButton = document.getElementById("add");
+  const clearButton = document.getElementById("clear");
+  const nameText = document.getElementById("name");
+  const dateText = document.getElementById("date");
 
   addButton.onclick = () => {};
 

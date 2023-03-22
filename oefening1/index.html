@@ -1,48 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <title>Countdown</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/bulma.min.css" />
+  </head>
 
-<head>
-	<title></title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">
+          Count down
+        </h1>
+        <div class="columns">
+          <div class="column">
+            <p class="subtitle">Enter a new Milestone</p>
+            <div class="field">
+              <label class="label" for="name">Name</label>
+              <div class="control">
+                <input
+                  id="name"
+                  class="input"
+                  type="text"
+                  maxlength="40"
+                  placeholder="Enter the name of the milestone"
+                />
+              </div>
+            </div>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-</head>
+            <div class="field">
+              <label class="label" for="name">Date</label>
+              <div class="control">
+                <input id="date" class="input" type="date" />
+              </div>
+            </div>
 
-<body>
-	<div class="container">
-		<div class="row">
-			<h1>Count down</h1>
-			<h3>New milestones</h3>
-		</div>
-		<div class="row">
+            <div class="field is-grouped">
+              <div class="control">
+                <button id="add" class="button is-link" type="submit">
+                  Add
+                </button>
+              </div>
+              <div class="control">
+                <button id="clear" class="button is-link is-light">
+                  Clear all milestones
+                </button>
+              </div>
+            </div>
+          </div>
 
-			<div class="form-inline">
-				<div class="form-group">
-					<label class="control-label">Enter a milestone:</label>
-				</div>
-				<div class="form-group">
-					<input class="form-control" type="text" name="name" id="name" size="40" maxlength="40" placeholder="name milestone">
-				</div>
-				<div class="form-group">
-					<input class="form-control" type="date" name="date" id="date">
-				</div>
-				<div class="form-group">
-					<input class="form-control" type="submit" value="+" id="add">
-				</div>
-				<div class="form-group">
-					<button class="form-control" id="clear">Clear all milestones</button>
-				</div>
-
-			</div>
-		</div>
-		<div class="row">
-			<h3>Overview milestones</h3>
-			<ul class="list-group" id="overview"></ul>
-		</div>
-	</div>
-	<script src="js/jquery-2.1.0.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/countdown.js"></script>
-</body>
-
+          <div class="column">
+            <p class="subtitle">Milestones Overview</p>
+            <ul class="list-group" id="overview"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/index.js" type="module"></script>
+  </body>
 </html>
