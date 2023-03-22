@@ -1,13 +1,14 @@
 # 06exStorage
 
-## Oefening 1: Countdown.
+# Oefening 1: Countdown.
 
 De bedoeling van deze oefening is om in de local storage in je browser belangrijke momenten (milestones) voor jou in de toekomst bij te houden.
 
+https://user-images.githubusercontent.com/10981553/226975807-3cdaf776-17df-4031-956a-f6317001c5c2.mov
+
 - Als op de `Add` knop geklikt wordt, wordt de milestone toegevoegd aan de local storage op voorwaarde dat de datum groter is dan vandaag.
 - Als op `Clear` knop geklikt wordt, worden alle milestones verwijderd uit de local storage.
-
-https://user-images.githubusercontent.com/10981553/226975807-3cdaf776-17df-4031-956a-f6317001c5c2.mov
+- Als op de `Delete` knop geklikt wordt (naast de milestone), wordt de milestone verwijderd uit de local storage.
 
 ## Gegeven
 
@@ -19,10 +20,10 @@ De klasse `Milestone` is deels gegeven. Je dient nog enkel de methode `toJSON` a
 
 De klasse `MilestonesComponent` bevat alle data en acties die op de pagina plaatsvinden. Het bevat de volgende fields en methodes :
 
-- `#milestones`: een array van `Milestone`s
+- `#milestones`: een array van Milestones
 - `storage` : verwijst naar `localStorage`
-- `constructor`: Stelt de event handlers in en haalt de milestones op uit de storage.
-- `getMilestonesFromStorage`: haalt de array op uit storage en filtert de milestones die in het verleden liggen eruit.
+- `constructor`: Stelt de event handlers in en haalt de milestones op uit de storage
+- `getMilestonesFromStorage`: haalt de array op uit storage en filtert de milestones die in het verleden liggen eruit
 - `setMilestonesInStorage`: sorteert de milestones op datum en stopt de milestones in de storage
 - `addMilestone`: maakt een nieuwe milestone aan en wordt in de storage geplaatst
 - `deleteMilestone`: verwijdert 1 milestone uit de array milestones en update de nieuwe array in de storage
@@ -66,6 +67,8 @@ De functie `init` haalt start de applicatie op.
   - `#deleteMilestone`: om de veranderde array in de storage te stoppen (maak gebruik van `setMilestonesInStorage`)
   - `#clearMilestone` om de array uit de storage te verwijderen
 - Test dit uit. Bekijk de storage via de Developer Tools
+
+---
 
 ## Oefening 2: Fietsvergoeding
 
