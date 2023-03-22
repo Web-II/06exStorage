@@ -1,66 +1,74 @@
 # 06exStorage
 
-## Oefening 1: Countdown.
+# Oefening 1: Countdown.
 
 De bedoeling van deze oefening is om in de local storage in je browser belangrijke momenten (milestones) voor jou in de toekomst bij te houden.
 
-- Als op de + geklikt wordt, wordt de milestone toegevoegd aan de local storage op voorwaarde dat de datum groter is dan vandaag.
-- Als op Clear all milestones geklikt wordt, worden alle milestones verwijderd uit de local storage.
+https://user-images.githubusercontent.com/10981553/226975807-3cdaf776-17df-4031-956a-f6317001c5c2.mov
 
-1. Deze oefening is volledig analoog aan het stickies voorbeeld.
-   ![countdown1.png](/docs/countdown1.png 'Voorbeeld')
-1. De klasse Milestone is deels gegeven. je dient de methode toJSON nog aan te vullen.
-1. De class MilestonesComponent bevat alle data en acties die op de pagina plaatsvinden. Het bevat volgende properties en methodes :
-   - milestones: een array van milestones
-   - storage : verwijst naar localStorage
-   - calculateDiffDays: berekent het aantal dagen tussen de huidige dag en de dag van de milestone
-   ```javascript
-   const oneDay = 24 * 60 * 60 * 1000;
-   return Math.ceil(
-     Math.abs(
-       (new Date().getTime() - new Date(cursor.value.date).getTime()) / oneDay
-     )
-   );
-   ```
-   - getMilestonesFromStorage: haalt de array op uit storage en filtert de milestones die in het verleden liggen eruit.
-   - setMilestonesInStorage: sorteert de milestones op datum en stopt de milestones in de storage
-   - addMilestone: maakt een nieuwe milestone aan en wordt in de storage geplaatst
-   - deleteMilestone: verwijdert 1 milestone uit de array milestones en update de nieuwe array in de storage
-   - clearMilestones: maakt de array milestones leeg en verwijdert de milestones uit de storage
-   - toHTML: overloopt alle milestones en toont deze, en voegt een verwijder knop toe
-1. De functie init haalt initieel de milestones op in de storage en toont die in HTML + de eventhandlers worden ingesteld
-1. Een milestone toevoegen
-   - Voeg code toe aan de functie addMilestone():
-     - De naam en de datum zijn verplichte velden, indien niet ingevuld, zal een boodschap worden weergegeven via een alert.
-     - Als de datum kleiner is of gelijk is aan vandaag, verschijnt een alert met de foutmelding: This milestone is already in the past and isn't added.
-     - Als de datum groter is dan vandaag, wordt de nieuwe milestone toegevoegd aan de array.
-     - Wanneer de milestone succesvol werd toegevoegd, wordt de functie toHTML opgeroepen.
-   - Voeg code toe aan de functie init() zodat een nieuwe milestone wordt toegevoegd als op de knop met id “add” wordt geklikt.
-   - Bekijk de bestaande code bij de functie toHTML. Deze code zorgt ervoor dat alle milestones verschijnen als een unordered list en voegt een verwijderknop toe.
-1. Alle milestones verwijderen
-   - Voeg code toe aan de functie clearMilestones()
-     - De array wordt leeg gemaakt
-     - De functie toHTML wordt opgeroepen
-   - Voeg code toe aan de functie init() zodat de functie clearMilestones() wordt uitgevoerd als op de knop met id “clear” wordt geklikt, nadat de gebruiker via een confirm box toestemming gaf
-1. Een milestone verwijderen op positie position
-   - Nadat de gebruiker op de verwijder knop klikt, moet hij eerst via een confirm box toestemming geven.
-   - Voeg code toe aan de functie deleteMilestone(ind) - De milestone op positie position wordt verwijderd uit de array - De functie toHTML wordt opgeroepen
-   - Voeg code toe aan de functie toHTML() zodat bij het overlopen van de milestones in de array er gecontroleerd wordt of de datum kleiner is dan of gelijk is aan de datum van vandaag. 
-   - Probeer dit uit door in de functie addMilestone de controle op de datum tijdelijk in commentaar te zetten, waardoor je tijdelijk wel milestones kunt toevoegen met een datum kleiner dan vandaag. Bij het uitschrijven, zal je zien dat de foutmelding verschijnt in de console.
-1. Storage
+- Als op de `Add` knop geklikt wordt, wordt de milestone toegevoegd aan de local storage op voorwaarde dat de datum groter is dan vandaag.
+- Als op `Clear` knop geklikt wordt, worden alle milestones verwijderd uit de local storage.
+- Als op de `Delete` knop geklikt wordt (naast de milestone), wordt de milestone verwijderd uit de local storage.
 
-   - Voeg code toe aan de functie getMilestonesFromStorage om de milestones op te halen uit de storage en in de array milestones te stoppen. Hier worden ook de milestones die in het verleden liggen uitgefilterd.
-   - Voeg code toe aan de functie setMilestonesInStorage om de milestones in de storage te stoppen. Sorteer eerst de milestones op aflopende datum.
-   - Voeg code toe aan
-     - addMilestone(): om de veranderde array in de storage te stoppen (maak gebruik van setMilestonesInStorage)
-     - deleteMilestone(): om de veranderde array in de storage te stoppen (maak gebruik van setMilestonesInStorage)
-     - clearMilestone() om de array uit de storage te verwijderen
-   - Test dit uit. Bekijk de storage via de Developer Tools
+## Gegeven
 
-1. Storage – Vervolg
-   - Voeg helemaal vooraan de init() functie code toe
-     - Als de browser geen localStorage ondersteunt, moeten de knoppen add en clear disabled worden
-     - Anders worden de milestones opgehaald uit de storage en getoond (met behulp van de functie toHTML)
+### Milestone
+
+De klasse `Milestone` is deels gegeven. Je dient nog enkel de methode `toJSON` aan te vullen in het `Milestone.js` bestand.
+
+### MilestonesComponent
+
+De klasse `MilestonesComponent` bevat alle data en acties die op de pagina plaatsvinden. Het bevat de volgende fields en methodes :
+
+- `#milestones`: een array van Milestones
+- `storage` : verwijst naar `localStorage`
+- `constructor`: Stelt de event handlers in en haalt de milestones op uit de storage
+- `getMilestonesFromStorage`: haalt de array op uit storage en filtert de milestones die in het verleden liggen eruit
+- `setMilestonesInStorage`: sorteert de milestones op datum en stopt de milestones in de storage
+- `addMilestone`: maakt een nieuwe milestone aan en wordt in de storage geplaatst
+- `deleteMilestone`: verwijdert 1 milestone uit de array milestones en update de nieuwe array in de storage
+- `clearMilestones`: maakt de array milestones leeg en verwijdert de milestones uit de storage
+- `toHTML`: overloopt alle milestones en toont deze, en voegt een verwijder knop toe
+
+### Index
+
+De functie `init` haalt start de applicatie op.
+
+## Gevraagd
+
+### Een milestone toevoegen
+
+- Voeg code toe aan de methode `#addMilestone`:
+  - De `name` en `date` zijn **verplichte** velden, indien niet ingevuld, zal de functie een `Error` gooien met een gepaste foutmelding.
+  - Als de `date` kleiner is of gelijk is aan vandaag, gooit de functie een `Error` met de foutnelding _"This milestone is already in the past and isn't added."_
+  - Als de datum groter is dan vandaag, wordt er een nieuwe `milestone` toegevoegd aan de array van `milestones`.
+  - Wanneer de `milestone` succesvol werd toegevoegd, wordt de functie `toHTML` opgeroepen.
+- Voeg code toe aan de constructor van de `MilestonesComponent` de functie `#addMilestone` wordt opgeroepen als op de knop met id `add` wordt geklikt. Gebruik hier een `try`/`catch` constructie om de foutmeldingen op te vangen en een `alert` te tonen met de foutmelding. Indien er geen foutmelding is, zet je de waarden van de input velden terug leeg.
+- Bekijk de bestaande code bij de functie `toHTML`. Deze code zorgt ervoor dat alle milestones verschijnen als een notificatie lijst en voegt een verwijderknop toe. Hier dien je momenteel nog niets te wijzigen.
+
+### Alle milestones verwijderen
+
+- Voeg code toe aan de methode `#clearMilestones`
+  - De array `#milestones` wordt leeg gemaakt
+  - De functie `toHTML` wordt opgeroepen
+- Voeg code toe aan de constructor van de `MilestonesComponent` zodat de functie `clearMilestones` wordt uitgevoerd als op de knop met id `clear` wordt geklikt, nadat de gebruiker via een confirm box toestemming gaf.
+
+### Een milestone verwijderen op positie
+
+- Nadat de gebruiker op de verwijder knop klikt van een `milestone`, moet hij eerst via een confirm box toestemming geven. Pas de toHTML functie aan zodat de gebruiker een confirm box krijgt alvorens te verwijderen.
+- Voeg code toe aan de functie `#deleteMilestone(ind)` - De milestone op positie `ind` wordt verwijderd uit de array - De functie `toHTML` wordt opgeroepen
+
+### Storage toevoegen
+
+- Voeg code toe aan de functie `#getMilestonesFromStorage` om de milestones op te halen uit de storage en in de array milestones te stoppen. Zorg ervoor dat hier de milestones die in het verleden liggen uitgefilterd worden.
+- Voeg code toe aan de functie `#setMilestonesInStorage` om de milestones in de storage te stoppen. Sorteer eerst de milestones op aflopende datum.
+- Voeg code toe aan
+  - `#addMilestone`: om de veranderde array in de storage te stoppen (maak gebruik van `setMilestonesInStorage`)
+  - `#deleteMilestone`: om de veranderde array in de storage te stoppen (maak gebruik van `setMilestonesInStorage`)
+  - `#clearMilestone` om de array uit de storage te verwijderen
+- Test dit uit. Bekijk de storage via de Developer Tools
+
+---
 
 ## Oefening 2: Fietsvergoeding
 
