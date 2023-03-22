@@ -12,6 +12,8 @@ export default class MilestonesComponent {
     addButton.onclick = () => {};
 
     clearButton.onclick = () => {};
+
+    this.#toHTML();
   }
 
   #addMilestone(name, date) {}
