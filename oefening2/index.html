@@ -1,79 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Fietsvergoeding</title>
-    <link href="css/fietsvergoeding.css" type="text/css" rel="stylesheet" media="screen" />
-</head>
+    <link rel="stylesheet" href="css/bulma.min.css" />
+  </head>
 
-<body>
-    <header>
-        <div class="wrapper">
-            <img src="images/fietsvergoeding1.png" alt="fietsvergoeding" />
-        </div>
-    </header>
-    <div class="wrapper">
-        <div>
-            <p>
-                <label for="jaar">Jaar</label>
-                <select id="jaar" name="jaar"></select>
-            </p>
-            <div>
-                <p>
-                    <label>Januari</label>
-                    <input type="number" id="0">
-                </p>
-                <p>
-                    <label>Februari</label>
-                    <input type="number" id="1">
-                </p>
-                <p>
-                    <label>Maart</label>
-                    <input type="number" id="2">
-                </p>
-                <p>
-                    <label>April</label>
-                    <input type="number" id="3">
-                </p>
-                <p>
-                    <label>Mei</label>
-                    <input type="number" id="4">
-                </p>
-                <p>
-                    <label>Juni</label>
-                    <input type="number" id="5">
-                </p>
-                <p>
-                    <label>Juli</label>
-                    <input type="number" id="6">
-                </p>
-                <p>
-                    <label>Augustus</label>
-                    <input type="number" id="7">
-                </p>
-                <p>
-                    <label>September</label>
-                    <input type="number" id="8">
-                </p>
-                <p>
-                    <label>Oktober</label>
-                    <input type="number" id="9">
-                </p>
-                <p>
-                    <label>November</label>
-                    <input type="number" id="10">
-                </p>
-                <p>
-                    <label>December</label>
-                    <input type="number" id="11">
-                </p>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">
+          Fietsvergoeding
+        </h1>
+        <div class="field">
+          <label class="label">Jaar</label>
+          <div class="control">
+            <div class="select">
+              <select id="jaar"> </select>
             </div>
-            <button id="opslaan">Opslaan</button>
+          </div>
         </div>
 
-    </div>
-    <script src="js/fietsvergoeding.js" type="text/javascript"></script>
-</body>
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <label class="label" for="0">Januari</label>
+              <div class="control">
+                <input id="0" class="input" type="number" />
+              </div>
+            </div>
 
+            <div class="field">
+              <label class="label" for="1">Februari</label>
+              <div class="control">
+                <input id="1" class="input" type="number" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="2">Maart</label>
+              <div class="control">
+                <input id="2" class="input" type="number" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="3">April</label>
+              <div class="control">
+                <input id="3" class="input" type="number" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="4">Mei</label>
+              <div class="control">
+                <input id="4" class="input" type="number" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="5">Juni</label>
+              <div class="control">
+                <input id="5" class="input" type="number" />
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label" for="6">Juli</label>
+              <div class="control">
+                <input id="6" class="input" type="number" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="7">Augustus</label>
+              <div class="control">
+                <input id="7" class="input" type="number" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="8">September</label>
+              <div class="control">
+                <input id="8" class="input" type="number" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="9">Oktober</label>
+              <div class="control">
+                <input id="9" class="input" type="number" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="10">November</label>
+              <div class="control">
+                <input id="10" class="input" type="number" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="11">December</label>
+              <div class="control">
+                <input id="11" class="input" type="number" />
+              </div>
+            </div>
+            <div class="field">
+              <div class="control has-text-right">
+                <button id="opslaan" class="button is-link" type="submit">
+                  Opslaan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/index.js" type="module"></script>
+  </body>
 </html>

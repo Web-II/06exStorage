@@ -73,34 +73,34 @@ De functie `init` haalt start de applicatie op.
 ## Oefening 2: Fietsvergoeding
 
 De bedoeling van de webpagina is om het aantal gefietste kilometers per maand gemakkelijk te kunnen ingeven (om later een fietsvergoeding te kunnen ontvangen).
-De gefietste kilometers zijn hard gecodeerd in de JavaScript code: in de GefietsteKilometersRepository
+De gefietste kilometers zijn hard gecodeerd in de JavaScript code: in de `GefietsteKilometersRepository`
 
-- De jaren worden geladen in de keuzelijst met id jaar bovenaan (op basis van de GefietsteKilometersRepository)
+- De jaren worden geladen in de keuzelijst met id jaar bovenaan (op basis van de `GefietsteKilometersRepository`)
 - Als de gebruiker een jaar kiest worden waarden ingevuld
-- Als de gebruiker één of meerdere waarden aanpast en klikt op de knop Opslaan, worden de waarden veranderd in de repository. Merk op dat dit tijdelijke en geen permanente veranderingen zijn!
+- Als de gebruiker één of meerdere waarden aanpast en klikt op de knop Opslaan, worden de waarden veranderd in de repository. Merk op dat dit tijdelijke en geen permanente veranderingen zijn! Je hoeft ze dus nooit te persisteren in localstorage, enkel aanpassen in de array van GefietsteKilometersRepository is voldoende.
 - Het laatst gekozen jaar wordt bijgehouden in de storage. Als de pagina daarna opnieuw geopend wordt, worden de waarden van dit laatst gekozen jaar onmiddellijk getoond.
-  De class GefietsteKilometers bestaat al: elk object bestaat uit een jaar, aantalKilometers (dit is een array: op positie 0 het aantal gefietste kilometers van januari, …) en bedragPerKilometer. Omdat het bedrag per kilometer bijvoorbeeld verandert door indexaanpassingen, wordt dit per jaar bijgehouden.
-  De data die we willen laten zien zit in GefietsteKilometersRepository
+  De class `GefietsteKilometers` bestaat al: elk object bestaat uit een `jaar`, `aantalKilometers` (dit is een array: op positie 0 het aantal gefietste kilometers van januari, …) en `bedragPerKilometer`. Omdat het bedrag per kilometer bijvoorbeeld verandert door indexaanpassingen, wordt dit per jaar bijgehouden.
+  De data die we willen laten zien zit in `GefietsteKilometersRepository`
 
-1. Implementeer de functie geefJaren in GefietsteKilometersRepository
-   - De functie geefJaren retourneert een array van de unieke jaren die bestaan binnen GefietsteKilometersRepository
-1. Implementeer de functie geefGefietsteKilometersVoorEenJaar in GefietsteKilometersRepository
+1. Implementeer de functie `geefJaren` in `GefietsteKilometersRepository`
+   - De functie `geefJaren` retourneert een array van de unieke jaren die bestaan binnen `GefietsteKilometersRepository`
+1. Implementeer de functie `geefGefietsteKilometersVoorEenJaar` in `GefietsteKilometersRepository`
    - De functie retourneert een array van de gefietste kilometers voor het opgegeven jaar (parameter)
-1. Implementeer de functie voegToe in GefietsteKilometersRepository
-   - De functie voegToe voeg een nieuw object GefietsteKilometers toe aan GefietsteKilometersRepository
-1. Implementeer de functie wijzigGefietsteKilometers in GefietsteKilometersRepository
-   - De functie wijzigGefietsteKilometers vervangt de bestaande array aantalKilometers voor het opgegeven jaar (parameter) door de array waarden (parameter)
-   - Implementeer de volgende functies in GefietsteKilometersComponent
-   1. gefietsteKilometersToHtml
+1. Implementeer de functie `voegToe` in `GefietsteKilometersRepository`
+   - De functie `voegToe` voeg een nieuw object `GefietsteKilometers` toe aan `GefietsteKilometersRepository`
+1. Implementeer de functie `wijzigGefietsteKilometers` in `GefietsteKilometersRepository`
+   - De functie `wijzigGefietsteKilometers` vervangt de bestaande array `aantalKilometers` voor het opgegeven jaar (parameter) door de array waarden (parameter)
+   - Implementeer de volgende functies in `GefietsteKilometersComponent`
+   1. `gefietsteKilometersToHtml`
       - De tekstvakken krijgen de correcte waarde voor het meegegeven jaar (parameter)
-   1. getJaarFromStorage
-      - Als de storage een sleutel jaarGefietsteKilometers bevat, moet de keuzelijst met id jaar deze waarde krijgen
-   1. setJaarInStorage
-      - Deze functie wordt gebruikt om het gekozen jaar weg te schrijven naar de storage. De gebruikte sleutel is jaarGefietsteKilometers
-   1. init
+   1. `getJaarFromStorage`
+      - Als de storage een sleutel `jaarGefietsteKilometers` bevat, moet de keuzelijst met id jaar deze waarde krijgen
+   1. `setJaarInStorage`
+      - Deze functie wordt gebruikt om het gekozen jaar weg te schrijven naar de storage. De gebruikte sleutel is `jaarGefietsteKilometers`
+   1. Consructor van de `GefietsteKilometersComponent`
       - Het laatst gekozen jaar wordt opgehaald uit de storage en ingesteld als waarde van de keuzelijst met id jaar
-      - De tekstvakken worden met de correcte waarden dynamisch opgevuld voor dat jaar (functie gefietsteKilometersToHtml)
+      - De tekstvakken worden met de correcte waarden dynamisch opgevuld voor dat jaar (functie `gefietsteKilometersToHtml`)
       - Als een ander jaar gekozen wordt in de keuzelijst met id jaar
-      - De tekstvakken met de correcte waarden worden dynamisch opgevuld voor dat jaar (functie gefietsteKilometersToHtml)
+      - De tekstvakken met de correcte waarden worden dynamisch opgevuld voor dat jaar (functie `gefietsteKilometersToHtml`)
       - Het laatst gekozen jaar wordt bijgewerkt in de storage
-      - Als op de knop opslaan geklikt wordt, moet de repository bijgewerkt worden.
+      - Als op de knop `opslaan` geklikt wordt, moet de `repository` bijgewerkt worden.
