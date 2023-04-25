@@ -32,7 +32,7 @@ De klasse `MilestonesComponent` bevat alle data en acties die op de pagina plaat
 
 ### Index
 
-De functie `init` haalt start de applicatie op.
+De functie `init` start de applicatie op.
 
 ## Gevraagd
 
@@ -40,10 +40,10 @@ De functie `init` haalt start de applicatie op.
 
 - Voeg code toe aan de methode `#addMilestone`:
   - De `name` en `date` zijn **verplichte** velden, indien niet ingevuld, zal de functie een `Error` gooien met een gepaste foutmelding.
-  - Als de `date` kleiner is of gelijk is aan vandaag, gooit de functie een `Error` met de foutnelding _"This milestone is already in the past and isn't added."_
+  - Als de `date` kleiner is of gelijk is aan vandaag, gooit de functie een `Error` met de foutmelding _"This milestone is already in the past and isn't added."_
   - Als de datum groter is dan vandaag, wordt er een nieuwe `milestone` toegevoegd aan de array van `milestones`.
   - Wanneer de `milestone` succesvol werd toegevoegd, wordt de functie `#toHTML` opgeroepen.
-- Voeg code toe aan de constructor van de `MilestonesComponent` de functie `#addMilestone` wordt opgeroepen als op de knop met id `add` wordt geklikt. Gebruik hier een `try`/`catch` constructie om de foutmeldingen op te vangen en een `alert` te tonen met de foutmelding. Indien er geen foutmelding is, zet je de waarden van de input velden terug leeg.
+- Voeg code toe aan de constructor van de `MilestonesComponent` zodat de functie `#addMilestone` wordt opgeroepen als op de knop met id `add` wordt geklikt. Gebruik hier een `try`/`catch` constructie om de foutmeldingen op te vangen (die onderliggend mogelijks werden veroorzaakt) en een `alert` te tonen met de foutmelding. Indien er geen foutmelding is, zet je de waarden van de input velden terug leeg.
 - Bekijk de bestaande code bij de functie `#toHTML`. Deze code zorgt ervoor dat alle milestones verschijnen als een notificatie lijst en voegt een verwijderknop toe. Hier dien je momenteel nog niets te wijzigen.
 
 ### Alle milestones verwijderen
